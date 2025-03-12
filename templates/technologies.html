@@ -1,0 +1,832 @@
+{% extends 'base.html' %}
+
+{% block title %}Auto Advisor - Emerging Car Technologies{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="display-5 fw-bold">Emerging Automotive Technologies</h1>
+        <p class="lead">Explore the cutting-edge innovations shaping the future of transportation.</p>
+    </div>
+</div>
+
+<!-- Hero Banner -->
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="hero-section">
+            <div class="container">
+                <h2 class="display-6 fw-bold mb-4">The Future of Mobility</h2>
+                <p class="lead mb-4">From electric powertrains to autonomous driving, discover how technology is revolutionizing the automotive industry.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Technologies Cards -->
+<div class="row mb-5">
+    <div class="col-12 mb-4">
+        <h2 class="border-bottom pb-2">Revolutionary Technologies</h2>
+    </div>
+    
+    <!-- Electrification -->
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card technology-card">
+            <div class="card-header bg-primary text-white">
+                <h3 class="h5 mb-0"><i class="fas fa-bolt me-2"></i> Vehicle Electrification</h3>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-3">
+                    <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" class="w-100" style="max-height: 150px;">
+                        <!-- Car body -->
+                        <rect x="30" y="70" width="140" height="30" rx="5" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Wheels -->
+                        <circle cx="50" cy="100" r="15" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <circle cx="150" cy="100" r="15" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Cabin -->
+                        <path d="M50,70 L70,40 L130,40 L150,70" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Windows -->
+                        <path d="M65,65 L80,45 L120,45 L135,65" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Battery -->
+                        <rect x="60" y="75" width="80" height="20" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <line x1="70" y1="75" x2="70" y2="95" stroke="currentColor" stroke-width="1"/>
+                        <line x1="80" y1="75" x2="80" y2="95" stroke="currentColor" stroke-width="1"/>
+                        <line x1="90" y1="75" x2="90" y2="95" stroke="currentColor" stroke-width="1"/>
+                        <line x1="100" y1="75" x2="100" y2="95" stroke="currentColor" stroke-width="1"/>
+                        <line x1="110" y1="75" x2="110" y2="95" stroke="currentColor" stroke-width="1"/>
+                        <line x1="120" y1="75" x2="120" y2="95" stroke="currentColor" stroke-width="1"/>
+                        <line x1="130" y1="75" x2="130" y2="95" stroke="currentColor" stroke-width="1"/>
+                        <!-- Lightning symbol -->
+                        <path d="M90,15 L80,35 L95,35 L85,55" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M115,15 L105,35 L120,35 L110,55" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+                <p>The shift from internal combustion engines to electric powertrains represents one of the most significant transformations in automotive history.</p>
+                <h5>Key Developments:</h5>
+                <ul>
+                    <li><strong>Battery Technology:</strong> New chemistries beyond lithium-ion promise higher energy density, faster charging, and longer lifespans</li>
+                    <li><strong>Solid-State Batteries:</strong> More stable and energy-dense than current lithium-ion batteries</li>
+                    <li><strong>Ultra-Fast Charging:</strong> 350kW+ charging systems enabling 80% charge in under 15 minutes</li>
+                    <li><strong>Motor Innovations:</strong> Axial flux motors and improved power electronics</li>
+                </ul>
+                <p><strong>Timeline:</strong> Mainstream adoption accelerating, with many manufacturers planning to go fully electric between 2025-2035</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Autonomous Driving -->
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card technology-card">
+            <div class="card-header bg-info text-white">
+                <h3 class="h5 mb-0"><i class="fas fa-robot me-2"></i> Autonomous Driving</h3>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-3">
+                    <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" class="w-100" style="max-height: 150px;">
+                        <!-- Car body -->
+                        <rect x="30" y="70" width="140" height="30" rx="5" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Wheels -->
+                        <circle cx="50" cy="100" r="15" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <circle cx="150" cy="100" r="15" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Cabin -->
+                        <path d="M50,70 L70,40 L130,40 L150,70" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Windows -->
+                        <path d="M65,65 L80,45 L120,45 L135,65" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Radar waves -->
+                        <path d="M30,50 Q15,50 15,35 Q15,20 30,20" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="2,2"/>
+                        <path d="M30,55 Q10,55 10,35 Q10,15 30,15" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="2,2"/>
+                        <path d="M30,60 Q5,60 5,35 Q5,10 30,10" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="2,2"/>
+                        <!-- Radar sensor -->
+                        <circle cx="30" cy="35" r="7" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <!-- Camera -->
+                        <rect x="90" y="43" width="20" height="5" rx="1" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <!-- Road -->
+                        <line x1="0" y1="115" x2="200" y2="115" stroke="currentColor" stroke-width="2"/>
+                        <line x1="20" y1="115" x2="40" y2="115" stroke="currentColor" stroke-width="4" stroke-dasharray="20,10"/>
+                        <line x1="70" y1="115" x2="90" y2="115" stroke="currentColor" stroke-width="4" stroke-dasharray="20,10"/>
+                        <line x1="120" y1="115" x2="140" y2="115" stroke="currentColor" stroke-width="4" stroke-dasharray="20,10"/>
+                        <line x1="170" y1="115" x2="190" y2="115" stroke="currentColor" stroke-width="4" stroke-dasharray="20,10"/>
+                    </svg>
+                </div>
+                <p>Self-driving technology is advancing rapidly, with varying levels of automation becoming available in consumer vehicles.</p>
+                <h5>Levels of Autonomy:</h5>
+                <ul>
+                    <li><strong>Level 1-2:</strong> Driver assistance (current mainstream systems)</li>
+                    <li><strong>Level 3:</strong> Conditional automation (driver can take hands off but must be ready to intervene)</li>
+                    <li><strong>Level 4:</strong> High automation (vehicle can handle most situations without driver intervention)</li>
+                    <li><strong>Level 5:</strong> Full automation (no human intervention needed)</li>
+                </ul>
+                <p><strong>Key Technologies:</strong> LiDAR, radar, camera fusion, artificial intelligence, HD mapping, and V2X communications</p>
+                <p><strong>Timeline:</strong> Level 3 systems now entering production, Level 4 expected in limited applications by 2025-2030</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Connected Cars -->
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card technology-card">
+            <div class="card-header bg-success text-white">
+                <h3 class="h5 mb-0"><i class="fas fa-wifi me-2"></i> Connected Vehicles</h3>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-3">
+                    <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" class="w-100" style="max-height: 150px;">
+                        <!-- Car body -->
+                        <rect x="30" y="70" width="140" height="30" rx="5" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Wheels -->
+                        <circle cx="50" cy="100" r="15" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <circle cx="150" cy="100" r="15" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Cabin -->
+                        <path d="M50,70 L70,40 L130,40 L150,70" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Windows -->
+                        <path d="M65,65 L80,45 L120,45 L135,65" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Connectivity waves -->
+                        <path d="M100,30 Q100,15 115,15" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <path d="M100,30 Q100,10 125,10" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <path d="M100,30 Q100,5 135,5" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <!-- Other car  -->
+                        <rect x="140" y="20" width="40" height="15" rx="3" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <circle cx="150" cy="35" r="5" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <circle cx="170" cy="35" r="5" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <!-- Traffic light -->
+                        <rect x="185" y="15" width="10" height="30" rx="2" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <circle cx="190" cy="20" r="3" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <circle cx="190" cy="30" r="3" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <circle cx="190" cy="40" r="3" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <!-- Connection lines -->
+                        <path d="M100,30 Q130,25 140,25" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="2,2"/>
+                        <path d="M100,30 Q150,30 185,30" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="2,2"/>
+                    </svg>
+                </div>
+                <p>Connected vehicle technology enables cars to communicate with each other, infrastructure, and the cloud.</p>
+                <h5>Key Applications:</h5>
+                <ul>
+                    <li><strong>V2V (Vehicle-to-Vehicle):</strong> Cars exchanging position, speed, and direction data</li>
+                    <li><strong>V2I (Vehicle-to-Infrastructure):</strong> Communication with traffic signals, road signs</li>
+                    <li><strong>V2X (Vehicle-to-Everything):</strong> Broader ecosystem connectivity including pedestrians</li>
+                    <li><strong>OTA Updates:</strong> Over-the-air software updates adding features and fixing issues</li>
+                </ul>
+                <p><strong>Benefits:</strong> Improved safety, traffic efficiency, enhanced navigation, and new service models</p>
+                <p><strong>Timeline:</strong> Basic connectivity is already common, V2X advancing from 2023 onward</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Alternative Powertrains -->
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card technology-card">
+            <div class="card-header bg-warning text-dark">
+                <h3 class="h5 mb-0"><i class="fas fa-atom me-2"></i> Hydrogen & Alternative Fuels</h3>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-3">
+                    <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" class="w-100" style="max-height: 150px;">
+                        <!-- Car body -->
+                        <rect x="30" y="70" width="140" height="30" rx="5" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Wheels -->
+                        <circle cx="50" cy="100" r="15" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <circle cx="150" cy="100" r="15" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Cabin -->
+                        <path d="M50,70 L70,40 L130,40 L150,70" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Windows -->
+                        <path d="M65,65 L80,45 L120,45 L135,65" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Hydrogen tank -->
+                        <rect x="70" y="75" width="60" height="15" rx="7.5" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- H2 text -->
+                        <text x="90" y="87" font-family="Arial" font-size="10" fill="currentColor">H₂</text>
+                        <!-- Fuel cell -->
+                        <rect x="50" y="50" width="30" height="15" rx="2" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <!-- Hydrogen molecule -->
+                        <circle cx="30" cy="30" r="8" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <circle cx="50" cy="30" r="8" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <line x1="38" y1="30" x2="42" y2="30" stroke="currentColor" stroke-width="1"/>
+                        <text x="27" y="33" font-family="Arial" font-size="8" fill="currentColor">H</text>
+                        <text x="47" y="33" font-family="Arial" font-size="8" fill="currentColor">H</text>
+                    </svg>
+                </div>
+                <p>While battery electric vehicles are gaining prominence, hydrogen fuel cells and other alternative fuels continue to develop as important options.</p>
+                <h5>Key Technologies:</h5>
+                <ul>
+                    <li><strong>Hydrogen Fuel Cells:</strong> Generate electricity through hydrogen and oxygen reaction</li>
+                    <li><strong>Synthetic Fuels:</strong> Carbon-neutral fuels manufactured using renewable energy</li>
+                    <li><strong>Biofuels:</strong> Advanced ethanol and biodiesel from non-food sources</li>
+                    <li><strong>Natural Gas:</strong> CNG and LNG as cleaner alternatives to gasoline/diesel</li>
+                </ul>
+                <p><strong>Applications:</strong> Hydrogen particularly promising for heavy transport, long-distance travel, and industrial vehicles</p>
+                <p><strong>Timeline:</strong> Commercial vehicles leading hydrogen adoption, with passenger applications expanding through 2030</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Advanced Materials -->
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card technology-card">
+            <div class="card-header bg-secondary text-white">
+                <h3 class="h5 mb-0"><i class="fas fa-layer-group me-2"></i> Advanced Materials</h3>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-3">
+                    <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" class="w-100" style="max-height: 150px;">
+                        <!-- Car body outline -->
+                        <path d="M30,70 L50,70 L70,40 L130,40 L150,70 L170,70 L170,100 L30,100 Z" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="5,2"/>
+                        <!-- Carbon fiber pattern areas -->
+                        <path d="M50,70 L70,40 L100,40" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M100,40 L130,40 L150,70" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M40,85 L160,85" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Hatching to represent carbon fiber -->
+                        <line x1="60" y1="40" x2="70" y2="50" stroke="currentColor" stroke-width="1"/>
+                        <line x1="70" y1="40" x2="80" y2="50" stroke="currentColor" stroke-width="1"/>
+                        <line x1="80" y1="40" x2="90" y2="50" stroke="currentColor" stroke-width="1"/>
+                        <line x1="90" y1="40" x2="100" y2="50" stroke="currentColor" stroke-width="1"/>
+                        <line x1="110" y1="40" x2="120" y2="50" stroke="currentColor" stroke-width="1"/>
+                        <line x1="120" y1="40" x2="130" y2="50" stroke="currentColor" stroke-width="1"/>
+                        <line x1="130" y1="40" x2="140" y2="50" stroke="currentColor" stroke-width="1"/>
+                        <line x1="140" y1="50" x2="150" y2="60" stroke="currentColor" stroke-width="1"/>
+                        <!-- Material labels -->
+                        <text x="75" y="35" font-family="Arial" font-size="8" fill="currentColor">Carbon Fiber</text>
+                        <text x="40" y="80" font-family="Arial" font-size="8" fill="currentColor">Aluminum</text>
+                        <text x="120" y="65" font-family="Arial" font-size="8" fill="currentColor">Composites</text>
+                        <text x="50" y="95" font-family="Arial" font-size="8" fill="currentColor">High-Strength Steel</text>
+                    </svg>
+                </div>
+                <p>New materials are making vehicles lighter, stronger, safer, and more sustainable.</p>
+                <h5>Key Developments:</h5>
+                <ul>
+                    <li><strong>Carbon Fiber Reinforced Polymer:</strong> Ultra-lightweight and strong, becoming more cost-effective</li>
+                    <li><strong>Advanced High-Strength Steel:</strong> Stronger and lighter than conventional steel</li>
+                    <li><strong>Aluminum Alloys:</strong> Significant weight reduction while maintaining strength</li>
+                    <li><strong>Sustainable Materials:</strong> Recycled plastics, plant-based composites, and eco-friendly fabrics</li>
+                </ul>
+                <p><strong>Benefits:</strong> Weight reduction, improved fuel economy/range, enhanced safety, reduced environmental impact</p>
+                <p><strong>Timeline:</strong> Already widely used in premium segments, expanding to mainstream vehicles</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- In-Car Technology -->
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card technology-card">
+            <div class="card-header bg-danger text-white">
+                <h3 class="h5 mb-0"><i class="fas fa-laptop me-2"></i> Digital Cockpit Evolution</h3>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-3">
+                    <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" class="w-100" style="max-height: 150px;">
+                        <!-- Dashboard outline -->
+                        <path d="M20,60 C20,40 180,40 180,60 L180,80 C180,100 20,100 20,80 Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Main display screen -->
+                        <rect x="60" y="50" width="80" height="40" rx="2" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <!-- Display content mock -->
+                        <line x1="70" y1="60" x2="130" y2="60" stroke="currentColor" stroke-width="1"/>
+                        <line x1="70" y1="70" x2="110" y2="70" stroke="currentColor" stroke-width="1"/>
+                        <line x1="70" y1="80" x2="120" y2="80" stroke="currentColor" stroke-width="1"/>
+                        <!-- Instrument cluster -->
+                        <rect x="30" y="55" width="25" height="30" rx="2" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <!-- Passenger display -->
+                        <rect x="145" y="55" width="25" height="30" rx="2" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <!-- Steering wheel -->
+                        <circle cx="40" cy="110" r="15" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M30,110 L50,110 M40,100 L40,120" stroke="currentColor" stroke-width="1"/>
+                        <!-- HUD projection -->
+                        <path d="M70,50 L90,20 L110,20 L130,50" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="2,2"/>
+                        <text x="90" y="30" font-family="Arial" font-size="8" fill="currentColor">HUD</text>
+                    </svg>
+                </div>
+                <p>The interior experience is being transformed by digital interfaces, personalization, and new human-machine interaction models.</p>
+                <h5>Key Innovations:</h5>
+                <ul>
+                    <li><strong>Head-Up Displays (HUD):</strong> Augmented reality projections on windshields</li>
+                    <li><strong>Full Digital Dashboards:</strong> Customizable instrument clusters and infotainment</li>
+                    <li><strong>Voice & Gesture Control:</strong> Natural interaction methods reducing distraction</li>
+                    <li><strong>Driver Monitoring:</strong> Cameras and sensors detecting attention and alertness</li>
+                    <li><strong>Biometric Access:</strong> Fingerprint, facial recognition, and heart rate integration</li>
+                </ul>
+                <p><strong>Integration:</strong> Digital assistants (Alexa, Google Assistant) becoming central to car functionality</p>
+                <p><strong>Timeline:</strong> Rapid evolution ongoing, with significant advancements each model year</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- EV Section -->
+<div class="row mb-5">
+    <div class="col-12 mb-4">
+        <h2 class="border-bottom pb-2">The Electric Revolution</h2>
+        <p class="lead">Electric vehicles are rapidly transforming from niche products to mainstream options.</p>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">EV Technology Advancements</h4>
+            </div>
+            <div class="card-body">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-battery-full fs-2 text-primary"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5>Battery Innovation</h5>
+                                <p class="mb-0 small">Energy density increasing ~5-8% annually; solid-state batteries promising 50%+ improvements</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-charging-station fs-2 text-primary"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5>Charging Infrastructure</h5>
+                                <p class="mb-0 small">350kW+ ultra-fast charging networks expanding; wireless charging emerging</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-cogs fs-2 text-primary"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5>Motor Technology</h5>
+                                <p class="mb-0 small">Axial flux motors offering higher power density; silicon carbide inverters improving efficiency</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-recycle fs-2 text-primary"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5>Battery Recycling</h5>
+                                <p class="mb-0 small">New processes recovering 95%+ of materials; second-life applications for used EV batteries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info mt-4">
+                    <h5><i class="fas fa-info-circle me-2"></i> Did You Know?</h5>
+                    <p class="mb-0">Many EVs now offer bidirectional charging capabilities, allowing them to power homes during outages or sell electricity back to the grid during peak demand periods.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">EV Adoption Timeline</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Timeframe</th>
+                                <th>Expected Developments</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2023-2025</td>
+                                <td>
+                                    <ul>
+                                        <li>400+ mile range becomes common in mid-priced EVs</li>
+                                        <li>Charging times under 20 minutes for 10-80%</li>
+                                        <li>Price parity with combustion vehicles in many segments</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2025-2030</td>
+                                <td>
+                                    <ul>
+                                        <li>Solid-state batteries enter mass production</li>
+                                        <li>EVs reach 30-50% of new vehicle sales in major markets</li>
+                                        <li>Most automakers offer EV options across all segments</li>
+                                        <li>Wireless charging infrastructure in urban areas</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2030-2035</td>
+                                <td>
+                                    <ul>
+                                        <li>Many countries begin phasing out new combustion vehicle sales</li>
+                                        <li>EVs become dominant in most passenger vehicle segments</li>
+                                        <li>Comprehensive charging networks, including rural areas</li>
+                                        <li>Heavy transport increasingly electrified</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2035+</td>
+                                <td>
+                                    <ul>
+                                        <li>Next-generation battery technologies (lithium-sulfur, etc.)</li>
+                                        <li>Complete vehicle design reimagining without combustion constraints</li>
+                                        <li>Vehicle-to-grid integration becomes standard</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Autonomous Driving Section -->
+<div class="row mb-5">
+    <div class="col-12 mb-4">
+        <h2 class="border-bottom pb-2">Autonomous Driving Development</h2>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0">Levels of Autonomy Explained</h4>
+            </div>
+            <div class="card-body">
+                <div class="accordion" id="autonomyAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingLevel0">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLevel0" aria-expanded="false">
+                                Level 0: No Automation
+                            </button>
+                        </h2>
+                        <div id="collapseLevel0" class="accordion-collapse collapse" data-bs-parent="#autonomyAccordion">
+                            <div class="accordion-body">
+                                <p>The driver performs all driving tasks without any assistance systems controlling steering, acceleration, or braking.</p>
+                                <p><strong>Examples:</strong> Basic cars without modern driver assistance features</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingLevel1">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLevel1" aria-expanded="false">
+                                Level 1: Driver Assistance
+                            </button>
+                        </h2>
+                        <div id="collapseLevel1" class="accordion-collapse collapse" data-bs-parent="#autonomyAccordion">
+                            <div class="accordion-body">
+                                <p>The vehicle can control either steering OR acceleration/braking in specific scenarios, but not both simultaneously. The driver must remain engaged and monitor the environment.</p>
+                                <p><strong>Examples:</strong> Adaptive cruise control or lane-keeping assist working independently</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingLevel2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLevel2" aria-expanded="false">
+                                Level 2: Partial Automation
+                            </button>
+                        </h2>
+                        <div id="collapseLevel2" class="accordion-collapse collapse" data-bs-parent="#autonomyAccordion">
+                            <div class="accordion-body">
+                                <p>The vehicle can control both steering AND acceleration/braking in specific scenarios. The driver must remain engaged, monitor the environment, and be ready to take control at any time.</p>
+                                <p><strong>Examples:</strong> Tesla Autopilot, GM Super Cruise, Ford BlueCruise, Nissan ProPILOT</p>
+                                <p><strong>Current status:</strong> Widely available in many new vehicles</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingLevel3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLevel3" aria-expanded="false">
+                                Level 3: Conditional Automation
+                            </button>
+                        </h2>
+                        <div id="collapseLevel3" class="accordion-collapse collapse" data-bs-parent="#autonomyAccordion">
+                            <div class="accordion-body">
+                                <p>The vehicle can perform all driving tasks under specific conditions. The driver must remain available to take control when requested by the system.</p>
+                                <p><strong>Examples:</strong> Mercedes Drive Pilot, Honda Legend with Honda Sensing Elite (Japan only)</p>
+                                <p><strong>Current status:</strong> Beginning to enter production in limited markets and conditions</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingLevel4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLevel4" aria-expanded="false">
+                                Level 4: High Automation
+                            </button>
+                        </h2>
+                        <div id="collapseLevel4" class="accordion-collapse collapse" data-bs-parent="#autonomyAccordion">
+                            <div class="accordion-body">
+                                <p>The vehicle can perform all driving tasks under specific conditions without requiring driver intervention. A human driver can still take control if desired, but it's not required for safety.</p>
+                                <p><strong>Examples:</strong> Waymo autonomous taxis (in specific geo-fenced areas), Cruise autonomous vehicles</p>
+                                <p><strong>Current status:</strong> Testing and limited commercial deployment in restricted areas</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingLevel5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLevel5" aria-expanded="false">
+                                Level 5: Full Automation
+                            </button>
+                        </h2>
+                        <div id="collapseLevel5" class="accordion-collapse collapse" data-bs-parent="#autonomyAccordion">
+                            <div class="accordion-body">
+                                <p>The vehicle can perform all driving tasks under all conditions that a human driver could handle. No human intervention is required.</p>
+                                <p><strong>Current status:</strong> Still in research and development, not yet available</p>
+                                <p><strong>Timeline:</strong> Most experts predict 2030+ for limited deployment, with full mainstream adoption likely taking decades</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0">Technologies Enabling Autonomy</h4>
+            </div>
+            <div class="card-body">
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-transparent">
+                            <div class="card-body">
+                                <h5><i class="fas fa-camera text-info me-2"></i> Perception</h5>
+                                <ul>
+                                    <li><strong>LiDAR:</strong> Light detection and ranging for precise 3D mapping</li>
+                                    <li><strong>Radar:</strong> Radio waves for distance and speed detection</li>
+                                    <li><strong>Cameras:</strong> Visual identification of objects, signs, and markings</li>
+                                    <li><strong>Ultrasonic:</strong> Close-range object detection</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-transparent">
+                            <div class="card-body">
+                                <h5><i class="fas fa-brain text-info me-2"></i> Decision Making</h5>
+                                <ul>
+                                    <li><strong>AI/ML:</strong> Neural networks for object recognition and prediction</li>
+                                    <li><strong>Sensor Fusion:</strong> Combining data from multiple sensors</li>
+                                    <li><strong>Path Planning:</strong> Algorithms to determine optimal routes</li>
+                                    <li><strong>Behavioral Prediction:</strong> Anticipating other road users' actions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-transparent">
+                            <div class="card-body">
+                                <h5><i class="fas fa-map-marked-alt text-info me-2"></i> Mapping & Localization</h5>
+                                <ul>
+                                    <li><strong>HD Maps:</strong> Centimeter-level precision maps</li>
+                                    <li><strong>GNSS/GPS:</strong> Global positioning systems</li>
+                                    <li><strong>SLAM:</strong> Simultaneous Localization and Mapping</li>
+                                    <li><strong>Landmark Recognition:</strong> Identifying fixed reference points</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-transparent">
+                            <div class="card-body">
+                                <h5><i class="fas fa-broadcast-tower text-info me-2"></i> Connectivity</h5>
+                                <ul>
+                                    <li><strong>V2V:</strong> Vehicle-to-vehicle communication</li>
+                                    <li><strong>V2I:</strong> Vehicle-to-infrastructure</li>
+                                    <li><strong>5G:</strong> High-bandwidth, low-latency networks</li>
+                                    <li><strong>Cloud Computing:</strong> Offloading processing and updates</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-warning mt-4">
+                    <h5><i class="fas fa-exclamation-triangle me-2"></i> Challenges Remaining</h5>
+                    <ul class="mb-0">
+                        <li><strong>Edge Cases:</strong> Handling rare but critical scenarios</li>
+                        <li><strong>Weather Conditions:</strong> Reliable operation in snow, heavy rain, and fog</li>
+                        <li><strong>Ethical Decisions:</strong> Programming for unavoidable accident scenarios</li>
+                        <li><strong>Regulatory Framework:</strong> Developing consistent legal standards</li>
+                        <li><strong>Consumer Trust:</strong> Building confidence in autonomous systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Future Concepts -->
+<div class="row mb-5">
+    <div class="col-12 mb-4">
+        <h2 class="border-bottom pb-2">Future Mobility Concepts</h2>
+        <p class="lead">Beyond current technologies, these experimental ideas could reshape transportation.</p>
+    </div>
+    
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h5 class="mb-0"><i class="fas fa-helicopter me-2"></i> Urban Air Mobility</h5>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-3">
+                    <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" class="w-100" style="max-height: 100px;">
+                        <!-- Flying car shape -->
+                        <ellipse cx="100" cy="50" rx="40" ry="15" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M70,50 L60,60 L140,60 L130,50" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <line x1="70" y1="50" x2="130" y2="50" stroke="currentColor" stroke-width="2"/>
+                        <!-- Propellers -->
+                        <circle cx="70" cy="35" r="15" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="2,2"/>
+                        <circle cx="130" cy="35" r="15" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="2,2"/>
+                        <circle cx="70" cy="65" r="15" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="2,2"/>
+                        <circle cx="130" cy="65" r="15" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="2,2"/>
+                        <!-- Buildings in background -->
+                        <rect x="20" y="75" width="15" height="25" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <rect x="40" y="65" width="15" height="35" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <rect x="145" y="70" width="15" height="30" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <rect x="165" y="60" width="15" height="40" stroke="currentColor" stroke-width="1" fill="none"/>
+                    </svg>
+                </div>
+                <p>Electric Vertical Takeoff and Landing (eVTOL) aircraft promise to transform urban transportation, reducing congestion by utilizing the third dimension.</p>
+                <p><strong>Key Companies:</strong> Joby Aviation, Lilium, Archer, Wisk Aero</p>
+                <p><strong>Timeline:</strong> Initial commercial services expected 2024-2026, with broader adoption by 2030</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h5 class="mb-0"><i class="fas fa-subway me-2"></i> Hyperloop Transportation</h5>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-3">
+                    <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" class="w-100" style="max-height: 100px;">
+                        <!-- Tube -->
+                        <path d="M10,30 L190,30 L190,70 L10,70 Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Pod -->
+                        <rect x="70" y="40" width="60" height="20" rx="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <!-- Windows -->
+                        <circle cx="85" cy="50" r="5" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <circle cx="100" cy="50" r="5" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <circle cx="115" cy="50" r="5" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <!-- Motion lines -->
+                        <line x1="40" y1="50" x2="60" y2="50" stroke="currentColor" stroke-width="1" stroke-dasharray="5,3"/>
+                        <line x1="140" y1="50" x2="160" y2="50" stroke="currentColor" stroke-width="1" stroke-dasharray="5,3"/>
+                    </svg>
+                </div>
+                <p>Hyperloop systems transport passengers and cargo in pods through low-pressure tubes at speeds up to 700+ mph, enabling regional travel in minutes rather than hours.</p>
+                <p><strong>Key Companies:</strong> Virgin Hyperloop, TransPod, Hardt Hyperloop</p>
+                <p><strong>Timeline:</strong> First commercial routes possible by late 2020s, widespread adoption 2030s+</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h5 class="mb-0"><i class="fas fa-server me-2"></i> Decentralized Mobility Networks</h5>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-3">
+                    <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" class="w-100" style="max-height: 100px;">
+                        <!-- Network nodes (cars) -->
+                        <rect x="30" y="30" width="20" height="10" rx="3" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <circle cx="35" cy="40" r="2" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <circle cx="45" cy="40" r="2" stroke="currentColor" stroke-width="1" fill="none"/>
+                        
+                        <rect x="90" y="20" width="20" height="10" rx="3" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <circle cx="95" cy="30" r="2" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <circle cx="105" cy="30" r="2" stroke="currentColor" stroke-width="1" fill="none"/>
+                        
+                        <rect x="150" y="40" width="20" height="10" rx="3" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <circle cx="155" cy="50" r="2" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <circle cx="165" cy="50" r="2" stroke="currentColor" stroke-width="1" fill="none"/>
+                        
+                        <rect x="40" y="70" width="20" height="10" rx="3" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <circle cx="45" cy="80" r="2" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <circle cx="55" cy="80" r="2" stroke="currentColor" stroke-width="1" fill="none"/>
+                        
+                        <rect x="120" y="70" width="20" height="10" rx="3" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <circle cx="125" cy="80" r="2" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <circle cx="135" cy="80" r="2" stroke="currentColor" stroke-width="1" fill="none"/>
+                        
+                        <!-- Connections between nodes -->
+                        <line x1="50" y1="35" x2="90" y2="25" stroke="currentColor" stroke-width="1" stroke-dasharray="2,2"/>
+                        <line x1="110" y1="25" x2="150" y2="45" stroke="currentColor" stroke-width="1" stroke-dasharray="2,2"/>
+                        <line x1="50" y1="35" x2="40" y2="70" stroke="currentColor" stroke-width="1" stroke-dasharray="2,2"/>
+                        <line x1="60" y1="75" x2="120" y2="75" stroke="currentColor" stroke-width="1" stroke-dasharray="2,2"/>
+                        <line x1="140" y1="70" x2="150" y2="50" stroke="currentColor" stroke-width="1" stroke-dasharray="2,2"/>
+                        <line x1="100" y1="30" x2="120" y2="70" stroke="currentColor" stroke-width="1" stroke-dasharray="2,2"/>
+                    </svg>
+                </div>
+                <p>Blockchain and distributed ledger technology could create self-regulating transportation networks where autonomous vehicles negotiate directly with each other and infrastructure.</p>
+                <p><strong>Potential Applications:</strong></p>
+                <ul>
+                    <li>Peer-to-peer ride sharing without central companies</li>
+                    <li>Automatic toll/charging payments between vehicles and infrastructure</li>
+                    <li>Decentralized traffic management systems</li>
+                </ul>
+                <p><strong>Timeline:</strong> Early implementations by late 2020s, mature systems 2030s+</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Check Emissions Banner -->
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="card bg-primary text-white">
+            <div class="card-body p-4">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h3>Evaluate Your Vehicle's Environmental Impact</h3>
+                        <p class="lead mb-md-0">Use our emissions calculator to see how your current vehicle compares to newer technologies and get personalized recommendations.</p>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <a href="{{ url_for('emissions') }}" class="btn btn-light btn-lg">
+                            <i class="fas fa-calculator me-2"></i> Check Your Emissions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Expert Opinions -->
+<div class="row">
+    <div class="col-12 mb-4">
+        <h2 class="border-bottom pb-2">Expert Insights</h2>
+        <p class="lead">Perspectives from automotive industry leaders on the future of transportation</p>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex mb-3">
+                    <div class="flex-shrink-0">
+                        <svg class="rounded-circle" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="30" cy="30" r="29" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="30" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M15,50 Q30,35 45,50" fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h5 class="mt-0">Dr. Amanda Chen</h5>
+                        <p class="text-muted">Chief Technology Officer, EV Battery Innovations</p>
+                    </div>
+                </div>
+                <blockquote class="blockquote">
+                    <p>"The next five years will see more transformation in automotive technology than the previous fifty. Solid-state batteries will be the tipping point, removing the final barriers to mass EV adoption by eliminating range anxiety and reducing charging times to near-parity with refueling."</p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex mb-3">
+                    <div class="flex-shrink-0">
+                        <svg class="rounded-circle" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="30" cy="30" r="29" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="30" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M15,50 Q30,35 45,50" fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h5 class="mt-0">Michael Rodrigues</h5>
+                        <p class="text-muted">Director of Autonomous Systems, AutoDrive Technologies</p>
+                    </div>
+                </div>
+                <blockquote class="blockquote">
+                    <p>"Full autonomy is a journey, not a destination. We'll see Level 4 systems in geo-fenced areas becoming common by 2025, but truly universal Level 5 automation may take until 2035 or beyond. The technology is advancing rapidly, but the regulatory and social frameworks are equally important and evolving more slowly."</p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="p-5 text-center bg-dark text-white rounded-3">
+            <h2 class="fw-bold mb-3">Have Questions About New Car Technologies?</h2>
+            <p class="lead mb-4">Our AI-powered chatbot can explain how emerging automotive technologies work and how they might affect your driving experience.</p>
+            <a href="{{ url_for('chatbot') }}" class="btn btn-primary btn-lg px-4">
+                <i class="fas fa-comments me-2"></i> Chat With Our Assistant
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block title %}Auto Advisor - Your Vehicle's Best Friend{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">Welcome to Auto Advisor</h1>
+        <p class="lead mb-5">Your complete solution for vehicle emissions prediction, diagnostics, and maintenance information</p>
+        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+            <a href="{{ url_for('emissions') }}" class="btn btn-primary btn-lg px-4 gap-3">
+                <i class="fas fa-leaf me-2"></i> Test Emissions
+            </a>
+            <a href="{{ url_for('chatbot') }}" class="btn btn-outline-light btn-lg px-4">
+                <i class="fas fa-comments me-2"></i> Car Diagnostics
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Services</h2>
+        <div class="row g-4">
+            <!-- Emissions Prediction -->
+            <div class="col-md-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <div class="card-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="card-title h4">Emissions Prediction</h3>
+                        <p class="card-text">Estimate your vehicle's environmental impact based on its specifications. Get personalized recommendations to reduce emissions.</p>
+                        <a href="{{ url_for('emissions') }}" class="btn btn-outline-primary mt-3">Check Your Emissions</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Diagnostic Chatbot -->
+            <div class="col-md-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <div class="card-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="card-title h4">Diagnostic Chatbot</h3>
+                        <p class="card-text">Describe your car's problems and get instant diagnostic suggestions. Our AI assistant helps identify issues and recommends solutions.</p>
+                        <a href="{{ url_for('chatbot') }}" class="btn btn-outline-primary mt-3">Chat Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Car Information -->
+            <div class="col-md-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <div class="card-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3 class="card-title h4">Car Information</h3>
+                        <p class="card-text">Comprehensive resources on car maintenance, brand comparisons, and emerging automotive technologies.</p>
+                        <a href="{{ url_for('car_info') }}" class="btn btn-outline-primary mt-3">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">How It Works</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="text-center">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="h5">1. Input Your Details</h3>
+                    <p>Enter your vehicle specifications or describe your car issues in natural language.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="h5">2. Intelligent Analysis</h3>
+                    <p>Our system analyzes your input to provide accurate predictions and diagnostics.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <div class="feature-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3 class="h5">3. Get Results & Recommendations</h3>
+                    <p>Receive detailed results with actionable recommendations for your vehicle.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5">
+    <div class="container">
+        <div class="p-5 text-center bg-primary text-white rounded-3">
+            <h2 class="fw-bold mb-3">Ready to get started?</h2>
+            <p class="lead mb-4">Choose one of our services to begin exploring Auto Advisor's capabilities.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="{{ url_for('emissions') }}" class="btn btn-light btn-lg px-4 me-sm-3">Test Emissions</a>
+                <a href="{{ url_for('chatbot') }}" class="btn btn-outline-light btn-lg px-4">Chat with Assistant</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

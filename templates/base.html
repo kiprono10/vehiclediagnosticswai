@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Auto Advisor{% endblock %}</title>
+    
+    <!-- Bootstrap CSS from Replit CDN -->
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+    
+    <!-- Page-specific CSS -->
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-auto fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Auto Advisor Logo" height="40" class="me-2">
+                Auto Advisor
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{{ url_for('index') }}">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/emissions' %}active{% endif %}" href="{{ url_for('emissions') }}">
+                            <i class="fas fa-leaf"></i> Emissions Predictor
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/chatbot' %}active{% endif %}" href="{{ url_for('chatbot') }}">
+                            <i class="fas fa-comments"></i> Diagnostic Chat
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {% if '/car_info' in request.path or '/maintenance' in request.path or '/brands' in request.path or '/technologies' in request.path %}active{% endif %}" 
+                           href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-car"></i> Car Info
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('car_info') }}">Overview</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('maintenance') }}">Maintenance</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('brands') }}">Brand Comparisons</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ url_for('technologies') }}">New Technologies</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-4">
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endif %}
+        
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Auto Advisor</h5>
+                    <p>Your reliable companion for all car-related concerns</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ url_for('emissions') }}" class="text-decoration-none">Emissions Predictor</a></li>
+                        <li><a href="{{ url_for('chatbot') }}" class="text-decoration-none">Diagnostic Chat</a></li>
+                        <li><a href="{{ url_for('maintenance') }}" class="text-decoration-none">Maintenance Guide</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Connect With Us</h5>
+                    <div class="d-flex justify-content-center gap-3 fs-3">
+                        <a href="#" class="text-decoration-none"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#" class="text-decoration-none"><i class="fab fa-twitter-square"></i></a>
+                        <a href="#" class="text-decoration-none"><i class="fab fa-instagram-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="mb-0">&copy; 2023 Auto Advisor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Page-specific JavaScript -->
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

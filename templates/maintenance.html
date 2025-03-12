@@ -1,0 +1,489 @@
+{% extends 'base.html' %}
+
+{% block title %}Auto Advisor - Car Maintenance Guide{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="display-5 fw-bold">Car Maintenance Guide</h1>
+        <p class="lead">Keep your vehicle running smoothly with our detailed maintenance recommendations.</p>
+    </div>
+</div>
+
+<!-- Maintenance Introduction -->
+<div class="row mb-5">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Why Regular Maintenance Matters</h2>
+                <p class="card-text">Regular maintenance is essential for your vehicle's longevity, safety, and performance. It helps:</p>
+                <ul>
+                    <li><strong>Extend vehicle life</strong> - Regular service prevents premature wear and component failure</li>
+                    <li><strong>Improve safety</strong> - Well-maintained vehicles are less likely to break down or have safety issues</li>
+                    <li><strong>Maintain value</strong> - Documented maintenance history increases resale value</li>
+                    <li><strong>Enhance performance</strong> - Properly tuned vehicles deliver better fuel economy and performance</li>
+                    <li><strong>Reduce emissions</strong> - Regular maintenance helps minimize environmental impact</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card bg-primary text-white">
+            <div class="card-body">
+                <h3 class="card-title">Maintenance Quick Links</h3>
+                <div class="list-group list-group-flush">
+                    <a href="#routine-maintenance" class="list-group-item list-group-item-action">Routine Maintenance</a>
+                    <a href="#seasonal-care" class="list-group-item list-group-item-action">Seasonal Care</a>
+                    <a href="#brand-specific" class="list-group-item list-group-item-action">Brand-Specific Tips</a>
+                    <a href="#diy-maintenance" class="list-group-item list-group-item-action">DIY Maintenance Guide</a>
+                    <a href="#warning-signs" class="list-group-item list-group-item-action">Warning Signs</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Routine Maintenance Section -->
+<div class="row mb-5" id="routine-maintenance">
+    <div class="col-12 mb-4">
+        <h2 class="border-bottom pb-2">Routine Maintenance Schedule</h2>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Every 3,000-5,000 Miles</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fas fa-oil-can text-primary me-2"></i> Oil and filter change
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fas fa-tachometer-alt text-primary me-2"></i> Tire pressure check
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fas fa-car-battery text-primary me-2"></i> Battery inspection
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fas fa-tint text-primary me-2"></i> Fluid levels check
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0">Every 15,000-30,000 Miles</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fas fa-filter text-primary me-2"></i> Air filter replacement
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fas fa-car text-primary me-2"></i> Tire rotation
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fas fa-brush text-primary me-2"></i> Brake inspection
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fas fa-bolt text-primary me-2"></i> Spark plug check
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fas fa-fan text-primary me-2"></i> Drive belt inspection
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-secondary text-white">
+                <h4 class="mb-0">Every 60,000+ Miles</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fas fa-tint-slash text-primary me-2"></i> Transmission fluid change
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fas fa-snowflake text-primary me-2"></i> Coolant system flush
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fas fa-bolt text-primary me-2"></i> Spark plug replacement
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fas fa-cogs text-primary me-2"></i> Timing belt replacement
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fas fa-gas-pump text-primary me-2"></i> Fuel filter replacement
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Seasonal Care Section -->
+<div class="row mb-5" id="seasonal-care">
+    <div class="col-12 mb-4">
+        <h2 class="border-bottom pb-2">Seasonal Maintenance Tips</h2>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0"><i class="fas fa-snowflake me-2"></i> Winter Care</h4>
+            </div>
+            <div class="card-body">
+                <div class="maintenance-item">
+                    <h5>Battery Maintenance</h5>
+                    <p>Cold weather reduces battery capacity. Have your battery tested before winter and replace if it's weak.</p>
+                </div>
+                
+                <div class="maintenance-item">
+                    <h5>Antifreeze/Coolant</h5>
+                    <p>Ensure proper coolant concentration to prevent freezing. A 50/50 mix of antifreeze and water is typically recommended.</p>
+                </div>
+                
+                <div class="maintenance-item">
+                    <h5>Tire Preparation</h5>
+                    <p>Consider switching to winter tires in snowy regions. Check tire pressure regularly as it drops in cold weather.</p>
+                </div>
+                
+                <div class="maintenance-item">
+                    <h5>Emergency Kit</h5>
+                    <p>Prepare a winter emergency kit with blankets, flashlight, ice scraper, small shovel, and jumper cables.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+                <h4 class="mb-0"><i class="fas fa-sun me-2"></i> Summer Care</h4>
+            </div>
+            <div class="card-body">
+                <div class="maintenance-item">
+                    <h5>Cooling System</h5>
+                    <p>Check coolant levels and condition. Inspect hoses and connections for leaks or wear to prevent overheating.</p>
+                </div>
+                
+                <div class="maintenance-item">
+                    <h5>Air Conditioning</h5>
+                    <p>Have your A/C system checked before hot weather arrives. Replace cabin air filters for better air quality.</p>
+                </div>
+                
+                <div class="maintenance-item">
+                    <h5>Battery Care</h5>
+                    <p>Heat accelerates battery fluid evaporation. Check battery connections and clean any corrosion.</p>
+                </div>
+                
+                <div class="maintenance-item">
+                    <h5>Wiper Blades and Fluid</h5>
+                    <p>Replace worn wiper blades and top up washer fluid with a summer formula to handle insects and road grime.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Brand-Specific Maintenance -->
+<div class="row mb-5" id="brand-specific">
+    <div class="col-12 mb-4">
+        <h2 class="border-bottom pb-2">Brand-Specific Maintenance Tips</h2>
+        <p class="lead">Different car brands may have specific maintenance requirements. Here are some tips for popular manufacturers:</p>
+    </div>
+    
+    <div class="col-12">
+        <div class="accordion" id="brandAccordion">
+            {% for brand in brands %}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading{{ loop.index }}">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ loop.index }}" aria-expanded="false" aria-controls="collapse{{ loop.index }}">
+                        {{ brand.name }}
+                    </button>
+                </h2>
+                <div id="collapse{{ loop.index }}" class="accordion-collapse collapse" aria-labelledby="heading{{ loop.index }}" data-bs-parent="#brandAccordion">
+                    <div class="accordion-body">
+                        {% if brand.name == "Toyota" %}
+                        <p>Toyota vehicles are known for their reliability and longevity when properly maintained:</p>
+                        <ul>
+                            <li><strong>Oil Changes</strong>: Synthetic oil every 10,000 miles for newer models, or 5,000 miles for conventional oil</li>
+                            <li><strong>Timing Belt</strong>: Replace every 60,000-100,000 miles (check your specific model)</li>
+                            <li><strong>Hybrid System</strong>: For Prius and other hybrids, inspect the cooling system for the inverter annually</li>
+                            <li><strong>Water Pump</strong>: Often replaced with timing belt service</li>
+                        </ul>
+                        {% elif brand.name == "Honda" %}
+                        <p>Honda vehicles typically require:</p>
+                        <ul>
+                            <li><strong>Maintenance Minder System</strong>: Follow the onboard system which calculates maintenance needs based on driving conditions</li>
+                            <li><strong>Timing Belt</strong>: 60,000-100,000 miles for models with timing belts (many newer models use chains)</li>
+                            <li><strong>Transmission Fluid</strong>: CVT transmissions need special Honda fluid, don't substitute</li>
+                            <li><strong>Valve Adjustment</strong>: Check at 100,000 miles for most models</li>
+                        </ul>
+                        {% elif brand.name == "Ford" %}
+                        <p>Ford vehicles have these specific needs:</p>
+                        <ul>
+                            <li><strong>EcoBoost Engines</strong>: These require premium synthetic oil and careful monitoring</li>
+                            <li><strong>PowerShift Transmissions</strong>: Need more frequent fluid changes (30,000-40,000 miles)</li>
+                            <li><strong>Transfer Case</strong>: 4WD/AWD models need fluid checks every 60,000 miles</li>
+                            <li><strong>Fuel System</strong>: Consider fuel system cleaning every 30,000 miles</li>
+                        </ul>
+                        {% elif brand.name == "BMW" %}
+                        <p>BMW maintenance requires attention to:</p>
+                        <ul>
+                            <li><strong>Oil Service</strong>: Use only BMW-approved synthetic oils</li>
+                            <li><strong>Cooling System</strong>: Inspect regularly as it's a common failure point</li>
+                            <li><strong>VANOS System</strong>: Have seals inspected at 60,000 miles</li>
+                            <li><strong>Brake Fluid</strong>: Change every 2 years regardless of mileage</li>
+                            <li><strong>iDrive System</strong>: Keep software updated</li>
+                        </ul>
+                        {% elif brand.name == "Tesla" %}
+                        <p>Tesla electric vehicles have unique maintenance requirements:</p>
+                        <ul>
+                            <li><strong>Battery Care</strong>: Avoid frequent supercharging and regularly charging to 100%</li>
+                            <li><strong>Tire Rotation</strong>: Every 6,000-8,000 miles due to instant torque</li>
+                            <li><strong>Brake System</strong>: Inspect annually despite less wear due to regenerative braking</li>
+                            <li><strong>Cabin Filter</strong>: Replace every 2 years for air quality</li>
+                            <li><strong>Cooling System</strong>: Battery coolant check at 4 years, then every 2 years</li>
+                        </ul>
+                        {% else %}
+                        <p>For {{ brand.name }} vehicles, we recommend:</p>
+                        <ul>
+                            <li>Always follow the manufacturer's recommended service schedule</li>
+                            <li>Use manufacturer-approved parts and fluids</li>
+                            <li>Pay attention to any brand-specific warning lights or messages</li>
+                            <li>Consider using dealership service for complex electronic systems</li>
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- DIY Maintenance Section -->
+<div class="row mb-5" id="diy-maintenance">
+    <div class="col-12 mb-4">
+        <h2 class="border-bottom pb-2">DIY Maintenance Guide</h2>
+        <p class="lead">Tasks you can safely perform yourself to save money and learn more about your vehicle:</p>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-success text-white">
+                <h4 class="mb-0">Beginner Level</h4>
+            </div>
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-check-circle text-success me-2 fs-4"></i>
+                    <div>
+                        <h5 class="mb-0">Check Tire Pressure</h5>
+                        <p class="mb-0 small text-muted">Monthly and before long trips</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-check-circle text-success me-2 fs-4"></i>
+                    <div>
+                        <h5 class="mb-0">Replace Wiper Blades</h5>
+                        <p class="mb-0 small text-muted">Every 6-12 months</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-check-circle text-success me-2 fs-4"></i>
+                    <div>
+                        <h5 class="mb-0">Check Fluid Levels</h5>
+                        <p class="mb-0 small text-muted">Oil, coolant, washer fluid</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-check-circle text-success me-2 fs-4"></i>
+                    <div>
+                        <h5 class="mb-0">Replace Air Filter</h5>
+                        <p class="mb-0 small text-muted">Every 15,000-30,000 miles</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-warning text-dark">
+                <h4 class="mb-0">Intermediate Level</h4>
+            </div>
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-tools text-warning me-2 fs-4"></i>
+                    <div>
+                        <h5 class="mb-0">Oil & Filter Change</h5>
+                        <p class="mb-0 small text-muted">Every 3,000-10,000 miles</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-tools text-warning me-2 fs-4"></i>
+                    <div>
+                        <h5 class="mb-0">Rotate Tires</h5>
+                        <p class="mb-0 small text-muted">Every 5,000-8,000 miles</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-tools text-warning me-2 fs-4"></i>
+                    <div>
+                        <h5 class="mb-0">Replace Cabin Air Filter</h5>
+                        <p class="mb-0 small text-muted">Every 15,000-30,000 miles</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-tools text-warning me-2 fs-4"></i>
+                    <div>
+                        <h5 class="mb-0">Battery Replacement</h5>
+                        <p class="mb-0 small text-muted">Every 3-5 years</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-danger text-white">
+                <h4 class="mb-0">Advanced Level</h4>
+            </div>
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-wrench text-danger me-2 fs-4"></i>
+                    <div>
+                        <h5 class="mb-0">Brake Pad Replacement</h5>
+                        <p class="mb-0 small text-muted">Every 30,000-70,000 miles</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-wrench text-danger me-2 fs-4"></i>
+                    <div>
+                        <h5 class="mb-0">Spark Plug Replacement</h5>
+                        <p class="mb-0 small text-muted">Every 30,000-100,000 miles</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-wrench text-danger me-2 fs-4"></i>
+                    <div>
+                        <h5 class="mb-0">Alternator Replacement</h5>
+                        <p class="mb-0 small text-muted">When failing (5-7 years)</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-wrench text-danger me-2 fs-4"></i>
+                    <div>
+                        <h5 class="mb-0">Starter Motor Replacement</h5>
+                        <p class="mb-0 small text-muted">When failing (7-10 years)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Warning Signs Section -->
+<div class="row mb-5" id="warning-signs">
+    <div class="col-12 mb-4">
+        <h2 class="border-bottom pb-2">Warning Signs You Shouldn't Ignore</h2>
+        <p class="lead">These symptoms could indicate serious problems that need immediate attention:</p>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header bg-danger text-white">
+                <h4 class="mb-0">Mechanical Warning Signs</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <h5><i class="fas fa-exclamation-triangle text-danger me-2"></i> Unusual Noises</h5>
+                        <p class="mb-0">Grinding, knocking, squealing or clunking sounds can indicate various serious problems. Different sounds point to different issues:</p>
+                        <ul>
+                            <li><strong>Squealing brakes</strong>: Brake pad wear indicators</li>
+                            <li><strong>Grinding when braking</strong>: Metal-on-metal contact in brakes</li>
+                            <li><strong>Engine knocking</strong>: Potential bearing failure or timing issues</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h5><i class="fas fa-exclamation-triangle text-danger me-2"></i> Vibrations</h5>
+                        <p class="mb-0">Unusual vibrations can indicate alignment issues, tire problems, or drivetrain failures.</p>
+                    </li>
+                    <li class="list-group-item">
+                        <h5><i class="fas fa-exclamation-triangle text-danger me-2"></i> Fluid Leaks</h5>
+                        <p class="mb-0">Different color leaks indicate different problems:</p>
+                        <ul>
+                            <li><strong>Red</strong>: Transmission fluid or power steering fluid</li>
+                            <li><strong>Green/Yellow</strong>: Coolant</li>
+                            <li><strong>Brown/Black</strong>: Oil</li>
+                            <li><strong>Clear/Brown</strong>: Brake fluid (very serious!)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header bg-danger text-white">
+                <h4 class="mb-0">Dashboard Warning Signs</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <h5><i class="fas fa-exclamation-triangle text-danger me-2"></i> Check Engine Light</h5>
+                        <p class="mb-0">Can indicate various issues from minor (loose gas cap) to major (catalytic converter failure).</p>
+                        <p class="mb-0"><strong>If flashing</strong>: Stop driving immediately! This indicates a serious problem that could damage the catalytic converter.</p>
+                    </li>
+                    <li class="list-group-item">
+                        <h5><i class="fas fa-exclamation-triangle text-danger me-2"></i> Temperature Warning</h5>
+                        <p class="mb-0">Indicates overheating which can cause severe engine damage. Stop driving and allow the engine to cool.</p>
+                    </li>
+                    <li class="list-group-item">
+                        <h5><i class="fas fa-exclamation-triangle text-danger me-2"></i> Oil Pressure Warning</h5>
+                        <p class="mb-0">Indicates low oil pressure which can cause catastrophic engine damage. Stop driving immediately.</p>
+                    </li>
+                    <li class="list-group-item">
+                        <h5><i class="fas fa-exclamation-triangle text-danger me-2"></i> Battery/Charging Warning</h5>
+                        <p class="mb-0">Indicates charging system problems. Your vehicle may soon stall if the alternator isn't charging the battery.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Get Help Section -->
+<div class="row">
+    <div class="col-12">
+        <div class="p-5 text-center bg-primary text-white rounded-3">
+            <h2 class="fw-bold mb-3">Need Help Diagnosing a Problem?</h2>
+            <p class="lead mb-4">Our diagnostic chatbot can help identify issues based on symptoms you're experiencing.</p>
+            <a href="{{ url_for('chatbot') }}" class="btn btn-light btn-lg px-4">
+                <i class="fas fa-comments me-2"></i> Get Diagnostic Help
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

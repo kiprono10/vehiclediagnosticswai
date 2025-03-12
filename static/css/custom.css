@@ -1,0 +1,188 @@
+/* Custom styling to complement Bootstrap */
+
+/* Main theme colors */
+:root {
+  --auto-primary: #3498db;
+  --auto-secondary: #2c3e50;
+  --auto-accent: #e74c3c;
+  --auto-light: #ecf0f1;
+  --auto-dark: #2c3e50;
+}
+
+/* Body styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  padding-top: 60px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content container */
+main {
+  flex: 1;
+}
+
+/* Custom navigation styling */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.navbar-auto {
+  background-color: var(--auto-dark);
+}
+
+/* Hero section styling */
+.hero-section {
+  background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.9)), url('https://source.unsplash.com/random/1200x800/?car,modern') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 5rem 0;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+
+/* Card styling */
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 1.5rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--auto-primary);
+}
+
+/* Feature sections */
+.feature-section {
+  padding: 4rem 0;
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: var(--auto-primary);
+  margin-bottom: 1rem;
+}
+
+/* Footer styling */
+footer {
+  background-color: var(--auto-dark);
+  color: white;
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+
+/* Chatbot specific styling */
+.chat-container {
+  height: 500px;
+  overflow-y: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+}
+
+.chat-message {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  max-width: 80%;
+}
+
+.user-message {
+  background-color: var(--auto-primary);
+  color: white;
+  margin-left: auto;
+}
+
+.bot-message {
+  background-color: #e9ecef;
+  color: var(--auto-dark);
+}
+
+/* Emissions prediction styling */
+.prediction-result {
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  border-left: 5px solid var(--auto-primary);
+}
+
+.rating-badge {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem 1.5rem;
+  border-radius: 50%;
+  color: white;
+}
+
+.rating-A {
+  background-color: #2ecc71;
+}
+
+.rating-B {
+  background-color: #27ae60;
+}
+
+.rating-C {
+  background-color: #f1c40f;
+}
+
+.rating-D {
+  background-color: #e67e22;
+}
+
+.rating-E {
+  background-color: #e74c3c;
+}
+
+.rating-F {
+  background-color: #c0392b;
+}
+
+/* Animation for loading spinner */
+.spinner-border {
+  width: 3rem; 
+  height: 3rem;
+}
+
+/* Maintenance page styling */
+.maintenance-item {
+  border-left: 4px solid var(--auto-primary);
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Car brand comparison styling */
+.brand-logo {
+  max-height: 80px;
+  margin-bottom: 1rem;
+}
+
+/* Technologies page styling */
+.technology-card {
+  min-height: 350px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 0;
+  }
+  
+  .chat-container {
+    height: 400px;
+  }
+  
+  .chat-message {
+    max-width: 90%;
+  }
+}

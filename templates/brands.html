@@ -1,0 +1,746 @@
+{% extends 'base.html' %}
+
+{% block title %}Auto Advisor - Car Brand Comparisons{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="display-5 fw-bold">Car Brand Comparisons</h1>
+        <p class="lead">Explore the strengths, weaknesses, and unique features of different automobile manufacturers.</p>
+    </div>
+</div>
+
+<!-- Intro Section -->
+<div class="row mb-5">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Understanding Car Brands</h2>
+                <p>Different car manufacturers focus on different aspects of automotive design and engineering. Some prioritize reliability, others focus on performance, luxury, or value. Understanding these differences can help you make better purchasing decisions based on your priorities.</p>
+                <p>Our brand comparison guide highlights the key characteristics, strengths, and weaknesses of major automotive manufacturers to help you navigate your car buying journey.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card bg-primary text-white">
+            <div class="card-body">
+                <h3 class="card-title">Comparison Criteria</h3>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Reliability & Longevity</li>
+                    <li class="list-group-item">Performance & Handling</li>
+                    <li class="list-group-item">Technology & Innovation</li>
+                    <li class="list-group-item">Safety Features & Ratings</li>
+                    <li class="list-group-item">Value & Cost of Ownership</li>
+                    <li class="list-group-item">Eco-Friendliness</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Brand Comparison Cards -->
+<div class="row mb-5">
+    <div class="col-12 mb-4">
+        <h2 class="border-bottom pb-2">Major Car Brand Analysis</h2>
+    </div>
+    
+    {% for brand in brands %}
+    <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-dark">
+                <h3 class="h5 mb-0">{{ brand.name }}</h3>
+            </div>
+            <div class="card-body">
+                <!-- Brand Logo as SVG -->
+                <div class="text-center mb-3">
+                    {% if brand.name == "Toyota" %}
+                    <svg class="brand-logo" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="50" cy="25" rx="30" ry="15" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <ellipse cx="50" cy="25" rx="20" ry="10" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <ellipse cx="50" cy="25" rx="10" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    {% elif brand.name == "Honda" %}
+                    <svg class="brand-logo" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="15" width="60" height="20" fill="none" stroke="currentColor" stroke-width="2" rx="5"/>
+                        <text x="50" y="30" text-anchor="middle" font-family="Arial" font-size="15" fill="currentColor">H</text>
+                    </svg>
+                    {% elif brand.name == "Ford" %}
+                    <svg class="brand-logo" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="50" cy="25" rx="30" ry="15" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M30,25 L70,25 M50,10 L50,40" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    {% elif brand.name == "Chevrolet" %}
+                    <svg class="brand-logo" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20,25 L80,25 L50,10 L20,25 L50,40 L80,25" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    {% elif brand.name == "BMW" %}
+                    <svg class="brand-logo" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="25" r="20" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M30,25 L70,25 M50,5 L50,45" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    {% elif brand.name == "Mercedes-Benz" %}
+                    <svg class="brand-logo" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="25" r="20" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M50,5 L50,25 L65,40 M50,25 L35,40 M50,25 L30,15" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    {% elif brand.name == "Tesla" %}
+                    <svg class="brand-logo" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M30,40 L50,10 L70,40 M30,25 L70,25" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                    {% else %}
+                    <svg class="brand-logo" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="15" width="60" height="20" fill="none" stroke="currentColor" stroke-width="2" rx="10"/>
+                        <text x="50" y="30" text-anchor="middle" font-family="Arial" font-size="12" fill="currentColor">{{ brand.name|truncate(1, true, '') }}</text>
+                    </svg>
+                    {% endif %}
+                </div>
+                
+                <!-- Brand Description -->
+                {% if brand.name == "Toyota" %}
+                <p><strong>Origin:</strong> Japan</p>
+                <h5>Strengths:</h5>
+                <ul>
+                    <li>Exceptional reliability and longevity</li>
+                    <li>Strong resale value</li>
+                    <li>Fuel-efficient models</li>
+                    <li>Pioneer in hybrid technology</li>
+                </ul>
+                <h5>Considerations:</h5>
+                <ul>
+                    <li>Sometimes conservative styling</li>
+                    <li>Less focus on performance in base models</li>
+                </ul>
+                <p><strong>Popular For:</strong> Camry, Corolla, RAV4, Prius</p>
+                
+                {% elif brand.name == "Honda" %}
+                <p><strong>Origin:</strong> Japan</p>
+                <h5>Strengths:</h5>
+                <ul>
+                    <li>Outstanding reliability</li>
+                    <li>Fuel efficiency across lineup</li>
+                    <li>Strong engine technology</li>
+                    <li>Sporty handling for segment</li>
+                </ul>
+                <h5>Considerations:</h5>
+                <ul>
+                    <li>Sometimes higher price than competitors</li>
+                    <li>Conservative technology adoption</li>
+                </ul>
+                <p><strong>Popular For:</strong> Civic, Accord, CR-V</p>
+                
+                {% elif brand.name == "Ford" %}
+                <p><strong>Origin:</strong> United States</p>
+                <h5>Strengths:</h5>
+                <ul>
+                    <li>Strong truck lineup (F-Series)</li>
+                    <li>Advanced turbo engine technology</li>
+                    <li>Modern infotainment systems</li>
+                    <li>American muscle heritage</li>
+                </ul>
+                <h5>Considerations:</h5>
+                <ul>
+                    <li>Mixed reliability across models</li>
+                    <li>Transmission issues in some vehicles</li>
+                </ul>
+                <p><strong>Popular For:</strong> F-150, Mustang, Explorer</p>
+                
+                {% elif brand.name == "Chevrolet" %}
+                <p><strong>Origin:</strong> United States</p>
+                <h5>Strengths:</h5>
+                <ul>
+                    <li>Diverse vehicle lineup</li>
+                    <li>Strong truck and SUV offerings</li>
+                    <li>Competitive pricing</li>
+                    <li>Performance heritage (Corvette, Camaro)</li>
+                </ul>
+                <h5>Considerations:</h5>
+                <ul>
+                    <li>Variable reliability ratings</li>
+                    <li>Interior quality in some models</li>
+                </ul>
+                <p><strong>Popular For:</strong> Silverado, Equinox, Corvette</p>
+                
+                {% elif brand.name == "Nissan" %}
+                <p><strong>Origin:</strong> Japan</p>
+                <h5>Strengths:</h5>
+                <ul>
+                    <li>Competitive pricing</li>
+                    <li>Spacious interiors</li>
+                    <li>Innovative features (e.g., ProPILOT)</li>
+                    <li>Electric vehicle pioneer (Leaf)</li>
+                </ul>
+                <h5>Considerations:</h5>
+                <ul>
+                    <li>CVT transmission reliability concerns</li>
+                    <li>Aging platforms on some models</li>
+                </ul>
+                <p><strong>Popular For:</strong> Altima, Rogue, Leaf</p>
+                
+                {% elif brand.name == "Volkswagen" %}
+                <p><strong>Origin:</strong> Germany</p>
+                <h5>Strengths:</h5>
+                <ul>
+                    <li>European driving dynamics</li>
+                    <li>Solid build quality</li>
+                    <li>Advanced diesel technology (pre-2015)</li>
+                    <li>Feature-rich interiors</li>
+                </ul>
+                <h5>Considerations:</h5>
+                <ul>
+                    <li>Higher maintenance costs</li>
+                    <li>Mixed reliability ratings</li>
+                </ul>
+                <p><strong>Popular For:</strong> Golf, Jetta, Tiguan</p>
+                
+                {% elif brand.name == "BMW" %}
+                <p><strong>Origin:</strong> Germany</p>
+                <h5>Strengths:</h5>
+                <ul>
+                    <li>Exceptional driving dynamics</li>
+                    <li>Cutting-edge technology</li>
+                    <li>Powerful, refined engines</li>
+                    <li>Prestigious brand image</li>
+                </ul>
+                <h5>Considerations:</h5>
+                <ul>
+                    <li>High purchase and maintenance costs</li>
+                    <li>Complex systems can be expensive to repair</li>
+                </ul>
+                <p><strong>Popular For:</strong> 3 Series, 5 Series, X5</p>
+                
+                {% elif brand.name == "Mercedes-Benz" %}
+                <p><strong>Origin:</strong> Germany</p>
+                <h5>Strengths:</h5>
+                <ul>
+                    <li>Luxury comfort and features</li>
+                    <li>Advanced safety technology</li>
+                    <li>Prestigious brand image</li>
+                    <li>Innovative engineering</li>
+                </ul>
+                <h5>Considerations:</h5>
+                <ul>
+                    <li>Premium purchase price</li>
+                    <li>Higher ownership costs</li>
+                    <li>Complex electronics</li>
+                </ul>
+                <p><strong>Popular For:</strong> C-Class, E-Class, GLE</p>
+                
+                {% elif brand.name == "Audi" %}
+                <p><strong>Origin:</strong> Germany</p>
+                <h5>Strengths:</h5>
+                <ul>
+                    <li>Interior design and quality</li>
+                    <li>Advanced technology features</li>
+                    <li>Quattro all-wheel-drive system</li>
+                    <li>Refined driving experience</li>
+                </ul>
+                <h5>Considerations:</h5>
+                <ul>
+                    <li>Higher maintenance costs</li>
+                    <li>Electronics reliability</li>
+                </ul>
+                <p><strong>Popular For:</strong> A4, Q5, Q7</p>
+                
+                {% elif brand.name == "Hyundai" %}
+                <p><strong>Origin:</strong> South Korea</p>
+                <h5>Strengths:</h5>
+                <ul>
+                    <li>Outstanding warranty coverage</li>
+                    <li>Excellent value proposition</li>
+                    <li>Rapidly improving quality</li>
+                    <li>Feature-rich at competitive prices</li>
+                </ul>
+                <h5>Considerations:</h5>
+                <ul>
+                    <li>Less refined driving dynamics in some models</li>
+                    <li>Lower resale value than Japanese rivals</li>
+                </ul>
+                <p><strong>Popular For:</strong> Elantra, Sonata, Tucson, Santa Fe</p>
+                
+                {% elif brand.name == "Kia" %}
+                <p><strong>Origin:</strong> South Korea</p>
+                <h5>Strengths:</h5>
+                <ul>
+                    <li>Industry-leading warranty</li>
+                    <li>Modern, distinctive styling</li>
+                    <li>Feature-packed at competitive prices</li>
+                    <li>Improving reliability ratings</li>
+                </ul>
+                <h5>Considerations:</h5>
+                <ul>
+                    <li>Resale value lags behind some competitors</li>
+                    <li>Performance not the primary focus</li>
+                </ul>
+                <p><strong>Popular For:</strong> Sportage, Sorento, Telluride, Soul</p>
+                
+                {% elif brand.name == "Tesla" %}
+                <p><strong>Origin:</strong> United States</p>
+                <h5>Strengths:</h5>
+                <ul>
+                    <li>Electric vehicle pioneer</li>
+                    <li>Industry-leading battery range</li>
+                    <li>Over-the-air software updates</li>
+                    <li>Advanced autopilot technology</li>
+                    <li>High performance across lineup</li>
+                </ul>
+                <h5>Considerations:</h5>
+                <ul>
+                    <li>Higher purchase price</li>
+                    <li>Build quality inconsistencies</li>
+                    <li>Limited service centers</li>
+                </ul>
+                <p><strong>Popular For:</strong> Model 3, Model Y, Model S</p>
+                
+                {% else %}
+                <p>{{ brand.name }} is known for their unique approach to automotive design and engineering. For detailed information about this manufacturer's strengths and specialties, use our diagnostic chatbot to learn more.</p>
+                <a href="{{ url_for('chatbot') }}" class="btn btn-primary mt-3">Ask our chatbot about {{ brand.name }}</a>
+                {% endif %}
+            </div>
+            <div class="card-footer">
+                <div class="row text-center">
+                    <div class="col-4">
+                        <h6>Reliability</h6>
+                        {% if brand.name in ["Toyota", "Honda", "Lexus"] %}
+                            <div class="text-success">★★★★★</div>
+                        {% elif brand.name in ["Mazda", "Subaru", "Kia", "Hyundai"] %}
+                            <div class="text-success">★★★★☆</div>
+                        {% elif brand.name in ["Ford", "Chevrolet", "Nissan", "Volkswagen"] %}
+                            <div class="text-warning">★★★☆☆</div>
+                        {% elif brand.name in ["BMW", "Mercedes-Benz", "Audi", "Tesla"] %}
+                            <div class="text-warning">★★★☆☆</div>
+                        {% else %}
+                            <div class="text-warning">★★★☆☆</div>
+                        {% endif %}
+                    </div>
+                    <div class="col-4">
+                        <h6>Performance</h6>
+                        {% if brand.name in ["BMW", "Audi", "Mercedes-Benz", "Tesla"] %}
+                            <div class="text-success">★★★★★</div>
+                        {% elif brand.name in ["Mazda", "Volkswagen", "Ford", "Toyota"] %}
+                            <div class="text-success">★★★★☆</div>
+                        {% elif brand.name in ["Honda", "Chevrolet", "Subaru", "Nissan"] %}
+                            <div class="text-warning">★★★☆☆</div>
+                        {% elif brand.name in ["Hyundai", "Kia"] %}
+                            <div class="text-warning">★★★☆☆</div>
+                        {% else %}
+                            <div class="text-warning">★★★☆☆</div>
+                        {% endif %}
+                    </div>
+                    <div class="col-4">
+                        <h6>Value</h6>
+                        {% if brand.name in ["Kia", "Hyundai", "Toyota", "Honda"] %}
+                            <div class="text-success">★★★★★</div>
+                        {% elif brand.name in ["Mazda", "Subaru", "Chevrolet", "Nissan"] %}
+                            <div class="text-success">★★★★☆</div>
+                        {% elif brand.name in ["Ford", "Volkswagen", "Tesla"] %}
+                            <div class="text-warning">★★★☆☆</div>
+                        {% elif brand.name in ["BMW", "Mercedes-Benz", "Audi", "Lexus"] %}
+                            <div class="text-warning">★★☆☆☆</div>
+                        {% else %}
+                            <div class="text-warning">★★★☆☆</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Reliability Rankings -->
+<div class="row mb-5">
+    <div class="col-12 mb-4">
+        <h2 class="border-bottom pb-2">Reliability Rankings</h2>
+        <p class="lead">Based on industry studies and consumer reports</p>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Most Reliable Brands</h4>
+            </div>
+            <div class="card-body">
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Lexus</div>
+                            Toyota's luxury division consistently ranks at the top for reliability
+                        </div>
+                        <span class="badge bg-success rounded-pill">95%</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Toyota</div>
+                            Known for building vehicles that regularly exceed 200,000 miles
+                        </div>
+                        <span class="badge bg-success rounded-pill">92%</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Mazda</div>
+                            Has made significant improvements in reliability in recent years
+                        </div>
+                        <span class="badge bg-success rounded-pill">89%</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Honda</div>
+                            Consistent reliability with well-engineered components
+                        </div>
+                        <span class="badge bg-success rounded-pill">87%</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Subaru</div>
+                            Strong reliability particularly in all-wheel drive systems
+                        </div>
+                        <span class="badge bg-primary rounded-pill">84%</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0">Common Reliability Issues by Brand</h4>
+            </div>
+            <div class="card-body">
+                <div class="accordion" id="reliabilityAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Volkswagen / Audi
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#reliabilityAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>DSG transmission issues in older models</li>
+                                    <li>Timing chain tensioner failures (2.0T engines)</li>
+                                    <li>Carbon buildup on intake valves (direct injection engines)</li>
+                                    <li>Electrical system complexities</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Ford
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#reliabilityAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>PowerShift dual-clutch transmission issues (2011-2016 Fiesta/Focus)</li>
+                                    <li>EcoBoost cooling problems in early models</li>
+                                    <li>MyFord Touch infotainment system glitches (older models)</li>
+                                    <li>Spark plug issues in 5.4L V8 engines</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Nissan
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#reliabilityAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>CVT transmission failures (across multiple models)</li>
+                                    <li>Timing chain issues on some VQ engines</li>
+                                    <li>Exhaust system rust in older models</li>
+                                    <li>Electrical issues in some models</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                BMW
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#reliabilityAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>High-pressure fuel pump failures (N54 engines)</li>
+                                    <li>Cooling system issues (water pumps, thermostats)</li>
+                                    <li>VANOS system failures</li>
+                                    <li>Valve cover/valve cover gasket oil leaks</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Toyota / Lexus
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#reliabilityAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Oil consumption in some 2007-2011 models with 2.4L engines</li>
+                                    <li>Dashboard cracking in 2003-2011 models</li>
+                                    <li>Water pump failures in some models</li>
+                                    <li>Relatively minor issues compared to other manufacturers</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Value Comparison -->
+<div class="row mb-5">
+    <div class="col-12 mb-4">
+        <h2 class="border-bottom pb-2">Cost of Ownership Comparison</h2>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h4 class="mb-0">Lowest Cost of Ownership</h4>
+            </div>
+            <div class="card-body">
+                <p>These brands typically offer the best value in terms of purchase price, maintenance costs, fuel efficiency, and depreciation over a 5-year period:</p>
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item d-flex align-items-center">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Toyota</div>
+                            Low maintenance costs, excellent fuel efficiency, minimal depreciation
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Honda</div>
+                            Competitive pricing, good fuel economy, strong resale values
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Kia</div>
+                            Low initial cost, excellent warranty, improving resale values
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Hyundai</div>
+                            Affordable purchase price, long warranty coverage, reasonable repair costs
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Mazda</div>
+                            Good fuel economy, increasing reliability, moderate repair costs
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header bg-danger text-white">
+                <h4 class="mb-0">Highest Cost of Ownership</h4>
+            </div>
+            <div class="card-body">
+                <p>These brands tend to cost more over time due to higher purchase price, maintenance costs, and in some cases, more significant depreciation:</p>
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item d-flex align-items-center">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">BMW</div>
+                            High maintenance costs, expensive parts, significant depreciation
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Mercedes-Benz</div>
+                            Premium service costs, costly parts, luxury depreciation curve
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Audi</div>
+                            High repair costs, specialized service requirements, complex systems
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Land Rover</div>
+                            Frequent maintenance needs, expensive parts, notable depreciation
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Jaguar</div>
+                            High repair frequency, premium service costs, steeper depreciation
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Safety Comparison -->
+<div class="row mb-5">
+    <div class="col-12 mb-4">
+        <h2 class="border-bottom pb-2">Safety Innovation Leaders</h2>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0">Advanced Safety Technology</h4>
+            </div>
+            <div class="card-body">
+                <p>These manufacturers are at the forefront of safety technology development:</p>
+                
+                <div class="d-flex mb-3 align-items-center">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-shield-alt fs-2 text-info"></i>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h5>Volvo</h5>
+                        <p class="mb-0">Pioneered many safety features including the three-point seatbelt. Known for their Vision 2020 initiative aiming for zero fatalities in new Volvo cars.</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex mb-3 align-items-center">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-shield-alt fs-2 text-info"></i>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h5>Subaru</h5>
+                        <p class="mb-0">EyeSight Driver Assist Technology provides comprehensive collision avoidance. Consistently earns top safety ratings across their lineup.</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex mb-3 align-items-center">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-shield-alt fs-2 text-info"></i>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h5>Mercedes-Benz</h5>
+                        <p class="mb-0">Pioneered many safety technologies including pre-safe systems, attention assist, and sophisticated crash structures.</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex mb-3 align-items-center">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-shield-alt fs-2 text-info"></i>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h5>Tesla</h5>
+                        <p class="mb-0">Advanced driver assistance systems and leading crash test performance. Vehicle design prioritizes structural safety.</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex mb-3 align-items-center">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-shield-alt fs-2 text-info"></i>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <h5>Toyota</h5>
+                        <p class="mb-0">Toyota Safety Sense now standard across most models, democratizing advanced safety features.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header bg-success text-white">
+                <h4 class="mb-0">Key Safety Features to Look For</h4>
+            </div>
+            <div class="card-body">
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-transparent">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-car-crash text-danger me-2"></i> Collision Avoidance</h5>
+                                <ul>
+                                    <li>Forward collision warning</li>
+                                    <li>Automatic emergency braking</li>
+                                    <li>Pedestrian detection</li>
+                                    <li>Cross-traffic alert</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-transparent">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-road text-warning me-2"></i> Lane Safety</h5>
+                                <ul>
+                                    <li>Lane departure warning</li>
+                                    <li>Lane keeping assist</li>
+                                    <li>Blind spot monitoring</li>
+                                    <li>Highway driving assistance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-transparent">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-user-shield text-primary me-2"></i> Occupant Protection</h5>
+                                <ul>
+                                    <li>Advanced airbag systems</li>
+                                    <li>Pre-collision preparation</li>
+                                    <li>Head restraint optimization</li>
+                                    <li>High-strength safety cage</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-transparent">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-tachometer-alt text-success me-2"></i> Driver Assistance</h5>
+                                <ul>
+                                    <li>Adaptive cruise control</li>
+                                    <li>Driver attention monitoring</li>
+                                    <li>360-degree camera systems</li>
+                                    <li>Parking assistance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action -->
+<div class="row">
+    <div class="col-12">
+        <div class="p-5 text-center bg-primary text-white rounded-3">
+            <h2 class="fw-bold mb-3">Need Help With Your Vehicle?</h2>
+            <p class="lead mb-4">Our diagnostic chatbot can help identify issues with your car regardless of make or model.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="{{ url_for('chatbot') }}" class="btn btn-light btn-lg px-4 me-sm-3">
+                    <i class="fas fa-comments me-2"></i> Diagnose Your Car
+                </a>
+                <a href="{{ url_for('emissions') }}" class="btn btn-outline-light btn-lg px-4">
+                    <i class="fas fa-leaf me-2"></i> Check Emissions
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

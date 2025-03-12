@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+
+{% block title %}Auto Advisor - Car Information{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="display-5 fw-bold">Car Information Center</h1>
+        <p class="lead">Your comprehensive resource for automotive knowledge.</p>
+    </div>
+</div>
+
+<!-- Hero Banner -->
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="hero-section">
+            <div class="container">
+                <h2 class="display-6 fw-bold mb-4">Explore Our Car Resources</h2>
+                <p class="lead mb-4">From maintenance tips to new technologies, find everything you need to know about cars.</p>
+                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                    <a href="{{ url_for('maintenance') }}" class="btn btn-primary btn-lg px-4 gap-3">
+                        <i class="fas fa-tools me-2"></i> Maintenance Guide
+                    </a>
+                    <a href="{{ url_for('brands') }}" class="btn btn-outline-light btn-lg px-4">
+                        <i class="fas fa-car me-2"></i> Brand Comparisons
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content Cards -->
+<div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+    <!-- Maintenance -->
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h3 class="card-title"><i class="fas fa-tools text-primary me-2"></i> Maintenance Guide</h3>
+                <p class="card-text">Learn how to keep your vehicle in top condition with our comprehensive maintenance guides. From routine service to troubleshooting common issues, we've got you covered.</p>
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item">Regular service schedules</li>
+                    <li class="list-group-item">DIY maintenance tips</li>
+                    <li class="list-group-item">Brand-specific maintenance advice</li>
+                    <li class="list-group-item">Seasonal care recommendations</li>
+                </ul>
+                <a href="{{ url_for('maintenance') }}" class="btn btn-primary">View Maintenance Guide</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Brand Comparisons -->
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h3 class="card-title"><i class="fas fa-car text-primary me-2"></i> Brand Comparisons</h3>
+                <p class="card-text">Explore the strengths and weaknesses of different car manufacturers. Our detailed comparisons help you understand what makes each brand unique.</p>
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item">Reliability rankings</li>
+                    <li class="list-group-item">Performance analysis</li>
+                    <li class="list-group-item">Cost of ownership comparisons</li>
+                    <li class="list-group-item">Brand specialties and innovations</li>
+                </ul>
+                <a href="{{ url_for('brands') }}" class="btn btn-primary">View Brand Comparisons</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Fuel Efficiency -->
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h3 class="card-title"><i class="fas fa-gas-pump text-primary me-2"></i> Fuel Efficiency & Emissions</h3>
+                <p class="card-text">Discover how to maximize your vehicle's fuel economy and reduce its environmental impact with our comprehensive guides.</p>
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item">Driving techniques for better mileage</li>
+                    <li class="list-group-item">Vehicle modifications for efficiency</li>
+                    <li class="list-group-item">Understanding emissions standards</li>
+                    <li class="list-group-item">Alternative fuels information</li>
+                </ul>
+                <a href="{{ url_for('emissions') }}" class="btn btn-primary">Check Emissions</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- New Technologies -->
+    <div class="col">
+        <div class="card h-100">
+            <div class="card-body">
+                <h3 class="card-title"><i class="fas fa-microchip text-primary me-2"></i> Emerging Technologies</h3>
+                <p class="card-text">Stay informed about the latest innovations in the automotive industry, from electric vehicles to autonomous driving systems.</p>
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item">Electric vehicle technologies</li>
+                    <li class="list-group-item">Autonomous driving developments</li>
+                    <li class="list-group-item">Connected car features</li>
+                    <li class="list-group-item">Future automotive trends</li>
+                </ul>
+                <a href="{{ url_for('technologies') }}" class="btn btn-primary">Explore New Technologies</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Featured Articles -->
+<div class="row mt-5">
+    <div class="col-12 mb-4">
+        <h2 class="border-bottom pb-2">Featured Automotive Topics</h2>
+    </div>
+
+    <!-- Article 1 -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Understanding Vehicle Emissions Standards</h5>
+                <p class="card-text">Emissions standards vary by country and region. Learn about the major standards like Euro 6, EPA Tier 3, and CARB, and what they mean for vehicle owners.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">Published: June 2023</small>
+                    <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#article1" aria-expanded="false">
+                        Read More
+                    </button>
+                </div>
+                <div class="collapse mt-3" id="article1">
+                    <p>Emissions standards are regulations that set specific limits on the amount of pollutants that can be released into the atmosphere. They are designed to reduce air pollution and its associated health and environmental impacts.</p>
+                    <p>The major emissions standards include:</p>
+                    <ul>
+                        <li><strong>Euro Standards (Europe)</strong>: Currently at Euro 6 for passenger cars, which sets strict limits on nitrogen oxides (NOx), carbon monoxide (CO), hydrocarbons (THC and NMHC) and particulate matter (PM).</li>
+                        <li><strong>EPA Tier 3 (United States)</strong>: These standards focus on reducing both tailpipe and evaporative emissions from passenger cars, light-duty trucks, medium-duty passenger vehicles, and some heavy-duty vehicles.</li>
+                        <li><strong>CARB (California Air Resources Board)</strong>: Often sets stricter standards than federal regulations, with many states choosing to follow CARB standards.</li>
+                    </ul>
+                    <p>For vehicle owners, these regulations typically mean newer vehicles are cleaner but may have more complex emissions control systems that require proper maintenance.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article 2 -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">The Evolution of Electric Vehicles</h5>
+                <p class="card-text">From early experiments to modern Tesla models, learn about how electric vehicles have evolved and what the future holds for this rapidly growing segment.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">Published: July 2023</small>
+                    <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#article2" aria-expanded="false">
+                        Read More
+                    </button>
+                </div>
+                <div class="collapse mt-3" id="article2">
+                    <p>Electric vehicles (EVs) have a surprisingly long history, dating back to the 1830s when the first crude electric carriage was invented. By the early 1900s, electric cars were actually more popular than gasoline vehicles in many areas.</p>
+                    <p>The modern EV revolution began in the late 1990s with vehicles like the GM EV1 and Toyota RAV4 EV, but truly accelerated with the introduction of the Tesla Roadster in 2008, which proved electric vehicles could be both high-performance and desirable.</p>
+                    <p>Today's EVs feature:</p>
+                    <ul>
+                        <li>Lithium-ion battery packs with increasingly longer ranges</li>
+                        <li>Fast-charging capabilities that reduce charging times significantly</li>
+                        <li>Advanced motor technology with improved efficiency</li>
+                        <li>Sophisticated battery management systems for optimal performance and safety</li>
+                    </ul>
+                    <p>The future of EVs looks promising with upcoming solid-state batteries expected to further increase range while reducing weight and charging time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="p-5 text-center bg-primary text-white rounded-3">
+            <h2 class="fw-bold mb-3">Need Personal Help With Your Car?</h2>
+            <p class="lead mb-4">Our diagnostic chatbot can help you identify problems and find solutions.</p>
+            <a href="{{ url_for('chatbot') }}" class="btn btn-light btn-lg px-4">
+                <i class="fas fa-comments me-2"></i> Chat with Auto Advisor
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

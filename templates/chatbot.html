@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+
+{% block title %}Auto Advisor - Vehicle Diagnostics Chatbot{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="display-5 fw-bold">Vehicle Diagnostics Chatbot</h1>
+        <p class="lead">Describe your car's problem and get instant diagnostic suggestions and maintenance advice.</p>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Chat Interface -->
+    <div class="col-lg-8">
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0"><i class="fas fa-comments me-2"></i> Chat with Auto Advisor</h4>
+            </div>
+            <div class="card-body">
+                <!-- Chat Messages Container -->
+                <div id="chat-container" class="chat-container mb-3">
+                    <div id="chat-messages">
+                        <!-- Messages will be added here dynamically -->
+                    </div>
+                </div>
+                
+                <!-- Chat Input Form -->
+                <form id="chat-form">
+                    <div class="input-group">
+                        <input type="text" id="user-input" class="form-control" placeholder="Describe your car problem..." aria-label="Message">
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Help Section -->
+    <div class="col-lg-4">
+        <!-- Example Questions -->
+        <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0"><i class="fas fa-question-circle me-2"></i> Example Questions</h5>
+            </div>
+            <div class="card-body">
+                <p>Not sure what to ask? Try one of these examples:</p>
+                <div id="example-questions">
+                    <!-- Example questions will be added here dynamically -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tips for Better Diagnostics -->
+        <div class="card">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="mb-0"><i class="fas fa-lightbulb me-2"></i> Tips for Better Results</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Be specific about symptoms (noise, smell, behavior)</li>
+                    <li class="list-group-item">Mention when the problem occurs (starting, driving, etc.)</li>
+                    <li class="list-group-item">Include your vehicle make, model, and year if possible</li>
+                    <li class="list-group-item">Describe any warning lights or messages</li>
+                    <li class="list-group-item">Mention recent changes or maintenance</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="row mt-4">
+    <div class="col-12">
+        <h2 class="mb-4">How Our Diagnostic Chatbot Helps You</h2>
+        
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-search fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Diagnose Issues</h5>
+                        <p class="card-text">Identify potential problems based on symptoms and vehicle behavior.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Suggest Solutions</h5>
+                        <p class="card-text">Get practical recommendations for fixing common car problems.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-exclamation-triangle fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Assess Severity</h5>
+                        <p class="card-text">Learn whether your issue requires immediate professional attention.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-book-open fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Educate Owners</h5>
+                        <p class="card-text">Understand your vehicle better through our explanations and resources.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Disclaimer -->
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="alert alert-warning" role="alert">
+            <h4 class="alert-heading"><i class="fas fa-exclamation-circle me-2"></i> Important Disclaimer</h4>
+            <p>The Auto Advisor chatbot provides general guidance based on symptoms and common issues. It is not a substitute for professional diagnosis by a certified mechanic.</p>
+            <hr>
+            <p class="mb-0">For safety-critical issues or if you're uncertain about a diagnosis, always consult with a qualified automotive professional.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<!-- Chatbot JS -->
+<script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+{% endblock %}

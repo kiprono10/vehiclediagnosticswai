@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+
+{% block title %}Auto Advisor - Emissions Predictor{% endblock %}
+
+{% block extra_css %}
+<!-- Chart.js for emission visualizations -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="display-5 fw-bold">Vehicle Emissions Predictor</h1>
+        <p class="lead">Predict and understand your vehicle's emissions impact on the environment.</p>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Prediction Form -->
+    <div class="col-lg-6">
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Vehicle Details</h4>
+            </div>
+            <div class="card-body">
+                <form id="prediction-form" method="post">
+                    <!-- Vehicle Type -->
+                    <div class="mb-3">
+                        <label for="vehicle-type" class="form-label">Vehicle Type</label>
+                        <select class="form-select" id="vehicle-type" name="vehicle_type" required>
+                            <option value="" selected disabled>Select vehicle type</option>
+                            <option value="sedan">Sedan</option>
+                            <option value="suv">SUV</option>
+                            <option value="truck">Truck</option>
+                            <option value="compact">Compact</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Fuel Type -->
+                    <div class="mb-3">
+                        <label for="fuel-type" class="form-label">Fuel Type</label>
+                        <select class="form-select" id="fuel-type" name="fuel_type" required>
+                            <option value="" selected disabled>Select fuel type</option>
+                            <option value="petrol">Petrol (Gasoline)</option>
+                            <option value="diesel">Diesel</option>
+                            <option value="hybrid">Hybrid</option>
+                            <option value="electric">Electric</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Engine Size -->
+                    <div class="mb-3">
+                        <label for="engine-size" class="form-label">Engine Size (Liters): <span id="engine-size-value">2.0</span></label>
+                        <input type="range" class="form-range" id="engine-size" name="engine_size" min="0.8" max="6.0" step="0.1" value="2.0">
+                        <div class="d-flex justify-content-between">
+                            <small>0.8L</small>
+                            <small>6.0L</small>
+                        </div>
+                    </div>
+                    
+                    <!-- Year -->
+                    <div class="mb-3">
+                        <label for="year" class="form-label">Manufacturing Year: <span id="year-value">2015</span></label>
+                        <input type="range" class="form-range" id="year" name="year" min="1990" max="2023" step="1" value="2015">
+                        <div class="d-flex justify-content-between">
+                            <small>1990</small>
+                            <small>2023</small>
+                        </div>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-calculator me-2"></i> Calculate Emissions
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Information Card -->
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0">About Emissions</h4>
+            </div>
+            <div class="card-body">
+                <p>Understanding your vehicle's emissions can help you make environmentally conscious decisions. Our emissions predictor calculates:</p>
+                <ul>
+                    <li><strong>CO<sub>2</sub> emissions</strong> - Contributes to global warming</li>
+                    <li><strong>NO<sub>x</sub> emissions</strong> - Causes smog and respiratory issues</li>
+                    <li><strong>Particulate Matter</strong> - Microscopic particles harmful to health</li>
+                </ul>
+                <p>Emission ratings range from A (excellent) to F (poor), providing a simple way to understand your vehicle's environmental impact.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Results Section -->
+    <div class="col-lg-6">
+        <!-- Loading Spinner -->
+        <div id="loading-spinner" class="text-center py-5 d-none">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-3">Calculating emissions...</p>
+        </div>
+        
+        <!-- Prediction Results -->
+        <div id="prediction-result"></div>
+        
+        <!-- Emissions Comparison Chart (will be shown after first prediction) -->
+        <div class="card mt-4 d-none" id="comparison-chart-container">
+            <div class="card-header bg-secondary text-white">
+                <h4 class="mb-0">Emissions Comparison</h4>
+            </div>
+            <div class="card-body">
+                <canvas id="emissions-chart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tips for Reducing Emissions -->
+<div class="row mt-5">
+    <div class="col-12">
+        <h2 class="mb-4">Tips for Reducing Vehicle Emissions</h2>
+        
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Maintenance -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-tools text-primary me-2"></i> Regular Maintenance</h5>
+                        <ul class="card-text">
+                            <li>Keep engine properly tuned</li>
+                            <li>Change oil regularly</li>
+                            <li>Check and replace air filters</li>
+                            <li>Ensure spark plugs are in good condition</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Driving Habits -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-tachometer-alt text-primary me-2"></i> Efficient Driving</h5>
+                        <ul class="card-text">
+                            <li>Avoid aggressive acceleration and braking</li>
+                            <li>Maintain steady speeds on highways</li>
+                            <li>Use cruise control when appropriate</li>
+                            <li>Avoid excessive idling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vehicle Weight -->
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-weight text-primary me-2"></i> Reduce Load</h5>
+                        <ul class="card-text">
+                            <li>Remove unnecessary items from your car</li>
+                            <li>Take roof racks off when not in use</li>
+                            <li>Excess weight increases fuel consumption</li>
+                            <li>Every 100 lbs increases emissions by 1-2%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<!-- Emissions Predictor JS -->
+<script src="{{ url_for('static', filename='js/emissions.js') }}"></script>
+{% endblock %}
