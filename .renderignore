@@ -1,0 +1,13 @@
+.git/
+.gitignore
+.replit
+venv/
+env/
+*.pyc
+__pycache__/
+.pytest_cache/
+*.db
+.env
+.env.local
+.DS_Store
+node_modules/
