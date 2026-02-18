@@ -1,1 +1,1 @@
-web: python -m gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --worker-class sync --timeout 30
+web: python3 -m waitress --port=$PORT app:app
